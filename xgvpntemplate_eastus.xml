@@ -69,7 +69,7 @@
     <Description/>
     <IPFamily>IPv4</IPFamily>
     <Status>Enable</Status>
-    <Position>Top</Position>
+    <Position>Bottom</Position>
     <PolicyType>Network</PolicyType>
     <Schedule>All The Time</Schedule>
     <Action>Accept</Action>
