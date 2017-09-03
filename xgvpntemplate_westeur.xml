@@ -62,13 +62,7 @@
       <LocalSubnet>WestEurLAN</LocalSubnet>
     </Configuration>
   </VPNIPSecConnection>
-  
-  <!-- Activate the vpn connection -->
-  <VPNIPSecConnection>
-  <Connection>
-  <Name>WestEurToEastUs</Name>
-  </Connection>
-  </VPNIPSecConnection>
+
 
 <!-- Adding two new firewall rules to allow vpn traffic -->
 <SecurityPolicy transactionid="">

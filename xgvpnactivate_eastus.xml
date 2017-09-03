@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+
+<!-- API Authentication -->
+<Login>
+<Username>apiuser01</Username>
+<Password>nrKyvtWgevFY</Password>
+</Login>
+
+<Set operation="update">
+  
+<!-- Activate the vpn connection -->
+<VPNIPSecConnection>
+<Connection>
+<Name>EastUsToWestEur</Name>
+</Connection>
+</VPNIPSecConnection>
+</Set>
+</Request>
