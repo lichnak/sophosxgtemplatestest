@@ -63,7 +63,6 @@
     </Configuration>
   </VPNIPSecConnection>
 
-
 <!-- Adding two new firewall rules to allow vpn traffic -->
 <SecurityPolicy transactionid="">
     <Name>EastUsLanToWestEurLan</Name>
@@ -149,5 +148,14 @@
     <DestSecurityHeartbeat>Disable</DestSecurityHeartbeat>
     <MinimumDestinationHBPermitted>No Restriction</MinimumDestinationHBPermitted>
   </SecurityPolicy>
+</Set>
+
+<Set operation="update">
+  <!-- Activate the vpn connection -->
+<VPNIPSecConnection>
+<Connection>
+<Name>WestEurToEastUs</Name>
+</Connection>
+</VPNIPSecConnection>
 </Set>
 </Request>

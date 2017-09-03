@@ -149,4 +149,14 @@
     <MinimumDestinationHBPermitted>No Restriction</MinimumDestinationHBPermitted>
   </SecurityPolicy>
 </Set>
+
+<Set operation="update">
+  
+<!-- Activate the vpn connection -->
+<VPNIPSecConnection>
+<Connection>
+<Name>EastUsToWestEur</Name>
+</Connection>
+</VPNIPSecConnection>
+</Set>
 </Request>
