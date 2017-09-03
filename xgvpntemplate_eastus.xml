@@ -79,7 +79,7 @@
       <Zone>LAN</Zone>
     </SourceZones>
     <SourceNetworks>
-      <Network>EastUSLAN</Network>
+      <Network>EastUsLAN</Network>
     </SourceNetworks>
     <DestinationZones>
       <Zone>VPN</Zone>
