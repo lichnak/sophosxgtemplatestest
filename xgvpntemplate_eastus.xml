@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+
+<!-- API Authentication -->
+<Login>
+<Username>apiuser01</Username>
+<Password>nrKyvtWgevFY</Password>
+</Login>
+
+
+<Set operation="add">
+
+<!-- Adding two new network definitions -->
+  <IPHost transactionid="">
+    <Name>EastUsLAN</Name>
+    <IPFamily>IPv4</IPFamily>
+    <HostType>Network</HostType>
+    <IPAddress>10.20.1.0</IPAddress>
+    <Subnet>255.255.255.0</Subnet>
+  </IPHost>
+  <IPHost transactionid="">
+    <Name>WestEurLAN</Name>
+    <IPFamily>IPv4</IPFamily>
+    <HostType>Network</HostType>
+    <IPAddress>10.10.1.0</IPAddress>
+    <Subnet>255.255.255.0</Subnet>
+  </IPHost>
+  
+<!-- Adding a new vpn ipsec connection --> 
+<VPNIPSecConnection transactionid="">
+    <Configuration>
+      <Name>EastUsToWestEur</Name>
+      <Description/>
+      <ConnectionType>SiteToSite</ConnectionType>
+      <Policy>DefaultBranchOffice</Policy>
+      <ActionOnVPNRestart>Initiate</ActionOnVPNRestart>
+      <AuthenticationType>PresharedKey</AuthenticationType>
+      <SubnetFamily>IPv4</SubnetFamily>
+      <AliasLocalWANPort>PortB</AliasLocalWANPort>
+      <RemoteHost>52.174.151.2</RemoteHost>
+      <NATedLAN/>
+      <LocalIDType>IP Address</LocalIDType>
+      <LocalID>13.92.193.207</LocalID>
+      <RemoteNetwork>
+        <Network>WestEurLAN</Network>
+      </RemoteNetwork>
+      <RemoteIDType>IP Address</RemoteIDType>
+      <RemoteID>52.174.151.2</RemoteID>
+      <UserAuthenticationMode>Disable</UserAuthenticationMode>
+      <AllowedUser>
+        <User/>
+      </AllowedUser>
+      <Protocol>ALL</Protocol>
+      <LocalPort/>
+      <RemotePort/>
+      <LocalWANPort>PortB</LocalWANPort>
+      <DisconnectOnIdleInterval/>
+      <Status>Deactive</Status>
+      <PresharedKey passwordform="encrypt">A232E7EA71DCABB8629A00A461A291B21F747AA69B6D8D2822553D7827D4FEC4</PresharedKey>
+      <Username/>
+      <Password/>
+      <LocalSubnet>EastUsLAN</LocalSubnet>
+    </Configuration>
+  </VPNIPSecConnection>
+  
+<!-- Adding two new firewall rules to allow vpn traffic -->
+<SecurityPolicy transactionid="">
+    <Name>EastUsLanToWestEurLan</Name>
+    <Description/>
+    <IPFamily>IPv4</IPFamily>
+    <Status>Enable</Status>
+    <Position>Top</Position>
+    <PolicyType>Network</PolicyType>
+    <Schedule>All The Time</Schedule>
+    <Action>Accept</Action>
+    <LogTraffic>Enable</LogTraffic>
+    <MatchIdentity>Disable</MatchIdentity>
+    <SourceZones>
+      <Zone>LAN</Zone>
+    </SourceZones>
+    <SourceNetworks>
+      <Network>EastUSLAN</Network>
+    </SourceNetworks>
+    <DestinationZones>
+      <Zone>VPN</Zone>
+    </DestinationZones>
+    <DestinationNetworks>
+      <Network>WestEurLAN</Network>
+    </DestinationNetworks>
+    <DSCPMarking>-1</DSCPMarking>
+    <ApplicationControl>None</ApplicationControl>
+    <ApplicationBaseQoSPolicy>Revoke</ApplicationBaseQoSPolicy>
+    <WebFilter>None</WebFilter>
+    <WebCategoryBaseQoSPolicy>Revoke</WebCategoryBaseQoSPolicy>
+    <IntrusionPrevention>None</IntrusionPrevention>
+    <TrafficShappingPolicy>None</TrafficShappingPolicy>
+    <RewriteSourceAddress>Disable</RewriteSourceAddress>
+    <PrimaryGateway/>
+    <BackupGateway/>
+    <ScanHTTP>Disable</ScanHTTP>
+    <ScanHTTPS>Disable</ScanHTTPS>
+    <Sandstorm>Disable</Sandstorm>
+    <ScanFTP>Disable</ScanFTP>
+    <SourceSecurityHeartbeat>Disable</SourceSecurityHeartbeat>
+    <MinimumSourceHBPermitted>No Restriction</MinimumSourceHBPermitted>
+    <DestSecurityHeartbeat>Disable</DestSecurityHeartbeat>
+    <MinimumDestinationHBPermitted>No Restriction</MinimumDestinationHBPermitted>
+  </SecurityPolicy>
+<SecurityPolicy transactionid="">
+    <Name>WestEurLANToEastUsLAN</Name>
+    <Description/>
+    <IPFamily>IPv4</IPFamily>
+    <Status>Enable</Status>
+    <Position>Top</Position>
+    <PolicyType>Network</PolicyType>
+    <Schedule>All The Time</Schedule>
+    <Action>Accept</Action>
+    <LogTraffic>Enable</LogTraffic>
+    <MatchIdentity>Disable</MatchIdentity>
+    <SourceZones>
+      <Zone>VPN</Zone>
+    </SourceZones>
+    <SourceNetworks>
+      <Network>WestEurLAN</Network>
+    </SourceNetworks>
+    <DestinationZones>
+      <Zone>LAN</Zone>
+    </DestinationZones>
+    <DestinationNetworks>
+      <Network>EastUsLAN</Network>
+    </DestinationNetworks>
+    <DSCPMarking>-1</DSCPMarking>
+    <ApplicationControl>None</ApplicationControl>
+    <ApplicationBaseQoSPolicy>Revoke</ApplicationBaseQoSPolicy>
+    <WebFilter>None</WebFilter>
+    <WebCategoryBaseQoSPolicy>Revoke</WebCategoryBaseQoSPolicy>
+    <IntrusionPrevention>None</IntrusionPrevention>
+    <TrafficShappingPolicy>None</TrafficShappingPolicy>
+    <RewriteSourceAddress>Disable</RewriteSourceAddress>
+    <PrimaryGateway/>
+    <BackupGateway/>
+    <ScanHTTP>Disable</ScanHTTP>
+    <ScanHTTPS>Disable</ScanHTTPS>
+    <Sandstorm>Disable</Sandstorm>
+    <ScanFTP>Disable</ScanFTP>
+    <SourceSecurityHeartbeat>Disable</SourceSecurityHeartbeat>
+    <MinimumSourceHBPermitted>No Restriction</MinimumSourceHBPermitted>
+    <DestSecurityHeartbeat>Disable</DestSecurityHeartbeat>
+    <MinimumDestinationHBPermitted>No Restriction</MinimumDestinationHBPermitted>
+  </SecurityPolicy>
+</Set>
+</Request>
