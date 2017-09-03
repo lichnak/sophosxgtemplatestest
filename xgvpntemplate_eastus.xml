@@ -55,7 +55,7 @@
       <RemotePort/>
       <LocalWANPort>PortB</LocalWANPort>
       <DisconnectOnIdleInterval/>
-      <Status>Deactive</Status>
+      <Status>Active</Status>
       <PresharedKey passwordform="encrypt">A232E7EA71DCABB8629A00A461A291B21F747AA69B6D8D2822553D7827D4FEC4</PresharedKey>
       <Username/>
       <Password/>
