@@ -3,8 +3,8 @@
 
 <!-- API Authentication -->
 <Login>
-<Username></Username>
-<Password></Password>
+<Username>apiuser01</Username>
+<Password>nrKyvtWgevFY</Password>
 </Login>
 
 
